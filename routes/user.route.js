@@ -397,17 +397,17 @@ router.post(
   '/widthdraw/:id',
   async (req, res, next) => {
       try {
-        const {id} = req.params.id;
-  const user = await User.findById(id);
-  if (!user) {
-    req.flash('warning', 'User not found!')
-    res.redirect('back');
-       }
+  //       const id = req.params;
+  // const user = await User.findById(id);
+  // if (!user) {
+  //   req.flash('warning', 'User not found!')
+  //   res.redirect('back');
+  //      }
 
-       if (user.balance === 0) {
-              req.flash('warning', 'Insufficient balance!')
-              res.redirect('back');
-          }
+       // if (user.balance === 0) {
+       //        req.flash('warning', 'Insufficient balance!')
+       //        res.redirect('back');
+       //    }
           // else{
             const widthdraw = new Widthdraw({
               amount: req.body.amount,
